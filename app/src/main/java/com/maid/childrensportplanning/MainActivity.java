@@ -4,7 +4,9 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.maid.childrensportplanning.Db.DbCursor;
 import com.maid.childrensportplanning.Db.Db;
 
 
@@ -20,6 +22,28 @@ public class MainActivity extends Activity {
         long children = Db.insertChildren("Dany");
         long sport = Db.insertSport("Football");
         Db.insertPlanning(children, sport, "14.12.2014 12:00");
+
+        TextView textView = (TextView) findViewById(R.id.textView);
+
+        DbCursor c = Db.getChildren();
+        c.moveToFirst();
+        String firstname = c.getChildFirstname();
+        textView.setText(firstname);
+
+        c = Db.getSports();
+        c.moveToFirst();
+        String name = c.getSportName();
+        textView.setText(name);
+
+        c = Db.getPlannings();
+        c.moveToFirst();
+        String d = c.getPlanningDate();
+        textView.setText(d);
+
+        c = Db.getPlanningsWithSportAndChildren();
+        c.moveToFirst();
+        firstname = c.getPlanningDate();
+        textView.setText(firstname);
     }
 
 
