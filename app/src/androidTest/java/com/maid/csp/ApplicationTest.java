@@ -1,4 +1,4 @@
-package com.maid.childrensportplanning;
+package com.maid.csp;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

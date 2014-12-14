@@ -1,4 +1,4 @@
-package com.maid.childrensportplanning.Db;
+package com.maid.csp.Db;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
