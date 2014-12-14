@@ -4,5 +4,8 @@
     <string name="app_name">CSP</string>
     <string name="add_planning">Add an event</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_planning_editor">PlanningEditorActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>
