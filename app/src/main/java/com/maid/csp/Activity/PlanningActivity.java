@@ -28,8 +28,6 @@ public class PlanningActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                return true;
             case R.id.action_add_planning:
                 openPlanningEditor();
                 return true;
