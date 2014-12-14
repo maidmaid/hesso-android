@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.maid.childrensportplanning.Db.Db;
+
 
 public class MainActivity extends Activity {
 
@@ -12,6 +14,12 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Test Db
+        Db.initialize(getApplicationContext());
+        long children = Db.insertChildren("Dany");
+        long sport = Db.insertSport("Football");
+        Db.insertPlanning(children, sport, "14.12.2014 12:00");
     }
 
 
