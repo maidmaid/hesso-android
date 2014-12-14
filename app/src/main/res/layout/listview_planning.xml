@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Title"
-        android:id="@+id/title"
+        android:id="@+id/lvp_title"
         android:layout_gravity="right|left"
         android:layout_row="0"
         android:layout_column="0" />
@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Subtitle"
-        android:id="@+id/subtitle"
+        android:id="@+id/lvp_subtitle"
         android:layout_row="0"
         android:layout_column="2" />
 
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Description"
-        android:id="@+id/description"
+        android:id="@+id/lvp_description"
         android:layout_row="2"
         android:layout_column="0"
         android:textStyle="italic" />

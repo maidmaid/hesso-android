@@ -9,7 +9,7 @@
     <DatePicker
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/datepicker"
+        android:id="@+id/pe_datepicker"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:calendarViewShown="false" />
@@ -18,8 +18,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         class="com.maid.csp.UI.ChildSpinner"
-        android:id="@+id/child_spinner"
-        android:layout_below="@+id/datepicker"
+        android:id="@+id/pe_childspinner"
+        android:layout_below="@+id/pe_datepicker"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -27,8 +27,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         class="com.maid.csp.UI.SportSpinner"
-        android:id="@+id/sport_spinner"
-        android:layout_below="@+id/child_spinner"
+        android:id="@+id/pe_sportspinner"
+        android:layout_below="@+id/pe_childspinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/add"
+        android:id="@+id/pe_add"
+        android:layout_below="@+id/pe_sportspinner"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="addPlanning" />
+
 </RelativeLayout>

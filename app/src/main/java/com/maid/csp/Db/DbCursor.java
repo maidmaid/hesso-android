@@ -2,6 +2,7 @@ package com.maid.csp.Db;
 
 import android.database.Cursor;
 import android.database.CursorWrapper;
+import android.provider.BaseColumns;
 
 /**
  * Cursor with utils methods for getting data
@@ -9,6 +10,13 @@ import android.database.CursorWrapper;
 public class DbCursor extends CursorWrapper {
     public DbCursor(Cursor cursor) {
         super(cursor);
+    }
+
+    /**
+     * Get ID
+     */
+    public long getId() {
+        return getWrappedCursor().getLong(getWrappedCursor().getColumnIndex(BaseColumns._ID));
     }
 
     /**
@@ -22,7 +30,7 @@ public class DbCursor extends CursorWrapper {
      * Get ID's child of planning
      */
     public long getPlanningChild() {
-        return getWrappedCursor().getLong(getWrappedCursor().getColumnIndex(DbContract.Planning.COLUMN_NAME_CHILDREN));
+        return getWrappedCursor().getLong(getWrappedCursor().getColumnIndex(DbContract.Planning.COLUMN_NAME_CHILD));
     }
 
     /**

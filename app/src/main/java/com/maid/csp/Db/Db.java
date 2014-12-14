@@ -6,6 +6,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Database utils methods
  */
@@ -22,11 +25,11 @@ public class Db {
     }
 
     /**
-     * Insert a children record
+     * Insert a child record
      * @param firstname firstname
      * @return ID of new children inserted
      */
-    public static long insertChildren(String firstname) {
+    public static long insertChild(String firstname) {
         ContentValues values = new ContentValues();
         values.put(DbContract.Child.COLUMN_NAME_FIRSTNAME, firstname);
         long id = db.insert(DbContract.Child.TABLE_NAME, null, values);
@@ -47,16 +50,17 @@ public class Db {
 
     /**
      * Insert a planning record
-     * @param children ID's children
+     * @param child ID's children
      * @param sport ID's sport
      * @param date date
      * @return ID of new planning inserted
      */
-    public static long insertPlanning(long children, long sport, String date) {
+    public static long insertPlanning(long child, long sport, Date date) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         ContentValues values = new ContentValues();
-        values.put(DbContract.Planning.COLUMN_NAME_CHILDREN, children);
+        values.put(DbContract.Planning.COLUMN_NAME_CHILD, child);
         values.put(DbContract.Planning.COLUMN_NAME_SPORT, sport);
-        values.put(DbContract.Planning.COLUMN_NAME_DATE, date);
+        values.put(DbContract.Planning.COLUMN_NAME_DATE, formatter.format(date));
         long id = db.insert(DbContract.Planning.TABLE_NAME, null, values);
         return id;
     }
@@ -98,7 +102,7 @@ public class Db {
     public static DbCursor getPlannings(){
         String[] projection = {
             DbContract.Planning._ID,
-            DbContract.Planning.COLUMN_NAME_CHILDREN,
+            DbContract.Planning.COLUMN_NAME_CHILD,
             DbContract.Planning.COLUMN_NAME_SPORT,
             DbContract.Planning.COLUMN_NAME_DATE,
         };
@@ -115,7 +119,7 @@ public class Db {
     public static DbCursor getPlanningsWithSportAndChildren() {
         String[] projection = {
             "p." + DbContract.Planning._ID,
-            DbContract.Planning.COLUMN_NAME_CHILDREN,
+            DbContract.Planning.COLUMN_NAME_CHILD,
             DbContract.Planning.COLUMN_NAME_SPORT,
             DbContract.Planning.COLUMN_NAME_DATE,
             DbContract.Sport.COLUMN_NAME_NAME,

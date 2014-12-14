@@ -47,9 +47,9 @@ public class PlanningListView extends ListView {
                 DbContract.Planning.COLUMN_NAME_DATE
             },
             new int[] {
-                R.id.title,
-                R.id.subtitle,
-                R.id.description
+                R.id.lvp_title,
+                R.id.lvp_subtitle,
+                R.id.lvp_description
             },
             CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
         );
