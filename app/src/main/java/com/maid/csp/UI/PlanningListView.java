@@ -54,16 +54,16 @@ public class PlanningListView extends ListView {
             CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER
         );
         setAdapter(adapter);
-        setOnItemClickListener(new OnPlanningItemClickListener());
     }
 
     /**
      * Planning item click listener
      */
-    private class OnPlanningItemClickListener implements AdapterView.OnItemClickListener {
+    public static class OnPlanningItemClickListener implements AdapterView.OnItemClickListener {
         @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-            cursor.moveToPosition(i);
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            PlanningListView plv = (PlanningListView) parent;
+            plv.cursor.moveToPosition(position);
         }
     }
 }

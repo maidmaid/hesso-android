@@ -53,4 +53,24 @@ public class DbCursor extends CursorWrapper {
     public String getSportName() {
         return getWrappedCursor().getString(getWrappedCursor().getColumnIndex(DbContract.Sport.COLUMN_NAME_NAME));
     }
+
+    /**
+     * Move to ID
+     * @param id
+     * @param column
+     */
+    public void moveToId(long id, String column) {
+        moveToFirst();
+        while(getLong(getColumnIndex(column)) != id && !isLast()) {
+            moveToNext();
+        }
+    }
+
+    /**
+     * Move to ID
+     * @param id
+     */
+    public void moveToId(long id) {
+        moveToId(id, BaseColumns._ID);
+    }
 }
