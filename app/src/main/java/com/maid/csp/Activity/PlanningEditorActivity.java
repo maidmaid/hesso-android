@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.DatePicker;
+import android.widget.SimpleCursorAdapter;
 
 import com.maid.csp.Db.Db;
 import com.maid.csp.R;
@@ -33,6 +34,7 @@ public class PlanningEditorActivity extends Activity {
             sportSpinner.cursor.moveToId(idSport);
             int position = sportSpinner.cursor.getPosition();
             sportSpinner.setSelection(position);
+            // TODO sportSpinner.selectSport(idSport)
         }
     }
 
