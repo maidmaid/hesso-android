@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import com.maid.csp.Db.Db;
 import com.maid.csp.Db.DbCursor;
 import com.maid.csp.R;
+import com.maid.csp.UI.DbListView;
 import com.maid.csp.UI.PlanningListView;
 
 
@@ -30,7 +31,7 @@ public class PlanningActivity extends Activity {
     /**
      * Click listener
      */
-    private class OnClickListener extends PlanningListView.OnPlanningItemClickListener {
+    private class OnClickListener extends DbListView.OnDbItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             super.onItemClick(parent, view, position, id);

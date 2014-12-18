@@ -45,7 +45,7 @@ public abstract class DbSpinner extends Spinner {
             adapter = new ArrayAdapter<String>(
                 getContext(),
                 android.R.layout.simple_spinner_item,
-                new String[] { getClass().getSimpleName() + " (Db Spinner)"  }
+                new String[] { getClass().getSimpleName() + " (DbSpinner)"  }
             );
         } else {
             cursor = initializeCursor();
