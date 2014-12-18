@@ -21,6 +21,7 @@ public class PlanningActivity extends ListActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.menu_planning, menu);
         return true;
     }
