@@ -44,7 +44,7 @@ public abstract class DbListView extends ListView {
         } else {
             cursor = initializeCursor();
             adapter = new SimpleCursorAdapter(
-                    getContext(),
+                getContext(),
                 getLayout(),
                 cursor,
                 getColumns(),

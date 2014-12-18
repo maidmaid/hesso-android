@@ -48,8 +48,11 @@ public class PlanningActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_add_planning:
+            case R.id.p_add:
                 openPlanningEditor();
+                return true;
+            case R.id.p_open_sport:
+                openSport();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -71,8 +74,19 @@ public class PlanningActivity extends Activity {
         startActivity(intent);
     }
 
+    /**
+     * Open planing editor (with new mode)
+     */
     private void openPlanningEditor() {
         openPlanningEditor(false);
+    }
+
+    /**
+     * Open sport
+     */
+    private void openSport() {
+        Intent intent = new Intent(this, SportActivity.class);
+        startActivity(intent);
     }
 
     @Override
