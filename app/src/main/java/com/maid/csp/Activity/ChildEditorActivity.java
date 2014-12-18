@@ -43,6 +43,7 @@ public class ChildEditorActivity extends EditorActivity {
 
     @Override
     public void deleteAction() {
-
+        Db.deleteChild(child);
+        finish();
     }
 }
