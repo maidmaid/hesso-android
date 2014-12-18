@@ -38,7 +38,7 @@ public abstract class ListActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.p_add:
+            case R.id.l_add:
                 openPlanningEditor();
                 return true;
             default:
@@ -56,6 +56,13 @@ public abstract class ListActivity extends Activity {
     }
 
     /**
+     * Open planing editor (with new mode)
+     */
+    private void openPlanningEditor() {
+        openPlanningEditor(false);
+    }
+
+    /**
      * Create intent for editor
      * @param editMode
      * @return
@@ -67,13 +74,6 @@ public abstract class ListActivity extends Activity {
      * @return
      */
     protected abstract DbListView getListView();
-
-    /**
-     * Open planing editor (with new mode)
-     */
-    private void openPlanningEditor() {
-        openPlanningEditor(false);
-    }
 
     @Override
     protected void onResume() {

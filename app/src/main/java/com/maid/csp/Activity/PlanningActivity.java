@@ -1,13 +1,11 @@
 package com.maid.csp.Activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.maid.csp.Db.Db;
-import com.maid.csp.Db.DbCursor;
 import com.maid.csp.R;
 import com.maid.csp.UI.DbListView;
 
@@ -19,7 +17,6 @@ public class PlanningActivity extends ListActivity {
         Db.initialize(this);
         setContentView(R.layout.activity_planning);
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

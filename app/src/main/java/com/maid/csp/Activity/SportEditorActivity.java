@@ -21,9 +21,7 @@ public class SportEditorActivity extends EditorActivity {
 
         // Intent
         Intent intent = getIntent();
-        editMode = intent.getBooleanExtra("edit_mode", false);
         if(editMode) {
-            // Get data
             sport = intent.getLongExtra("id", 0);
         }
     }
