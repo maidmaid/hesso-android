@@ -4,6 +4,8 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.Calendar;
+
 /**
  * Database helper
  */
@@ -18,9 +20,16 @@ public class DbHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
+        // Create tables
         db.execSQL(DbContract.Child.SQL_CREATE_TABLE);
         db.execSQL(DbContract.Sport.SQL_CREATE_TABLE);
         db.execSQL(DbContract.Planning.SQL_CREATE_TABLE);
+
+        // Load data
+        long child = Db.insertChild("Dany");
+        long sport = Db.insertSport("Football");
+        Calendar date = Calendar.getInstance();
+        Db.insertPlanning(child, sport, date);
     }
 
     @Override

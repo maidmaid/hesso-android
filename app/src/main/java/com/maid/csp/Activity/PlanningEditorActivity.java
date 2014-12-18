@@ -1,6 +1,8 @@
 package com.maid.csp.Activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +20,6 @@ public class PlanningEditorActivity extends Activity {
     private DatePicker datePicker;
     private ChildSpinner childSpinner;
     private SportSpinner sportSpinner;
-    private Button addBtn;
-    private Button updateBtn;
     private long planning;
 
     @Override
@@ -31,8 +31,9 @@ public class PlanningEditorActivity extends Activity {
         datePicker = (DatePicker) findViewById(R.id.pe_datepicker);
         childSpinner = (ChildSpinner) findViewById(R.id.pe_childspinner);
         sportSpinner = (SportSpinner) findViewById(R.id.pe_sportspinner);
-        addBtn = (Button) findViewById(R.id.pe_add);
-        updateBtn = (Button) findViewById(R.id.pe_update);
+        Button addBtn = (Button) findViewById(R.id.pe_add);
+        Button updateBtn = (Button) findViewById(R.id.pe_update);
+        Button deleteBtn = (Button) findViewById(R.id.pe_delete);
 
         // Intent
         Intent intent = getIntent();
@@ -51,6 +52,7 @@ public class PlanningEditorActivity extends Activity {
             addBtn.setVisibility(View.GONE);
         } else {
             updateBtn.setVisibility(View.GONE);
+            deleteBtn.setVisibility(View.GONE);
         }
     }
 
@@ -60,9 +62,9 @@ public class PlanningEditorActivity extends Activity {
      */
     public void addPlanning(View view) {
         Db.insertPlanning(
-            childSpinner.cursor.getId(),
-            sportSpinner.cursor.getId(),
-            getDate()
+                childSpinner.cursor.getId(),
+                sportSpinner.cursor.getId(),
+                getDate()
         );
         finish();
     }
@@ -92,5 +94,23 @@ public class PlanningEditorActivity extends Activity {
             getDate()
         );
         finish();
+    }
+
+    /**
+     * Delete a planning
+     * @param view
+     */
+    public void deletePlanning(View view) {
+        new AlertDialog.Builder(this)
+            .setTitle(R.string.delete_planning)
+            .setMessage(R.string.delete_planning_question)
+            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    Db.deletePlanning(planning);
+                    finish();
+                }
+            })
+            .setIcon(android.R.drawable.ic_dialog_alert)
+            .show();
     }
 }

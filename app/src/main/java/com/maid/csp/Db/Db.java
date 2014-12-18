@@ -160,4 +160,16 @@ public class Db {
         int updated = db.update(DbContract.Planning.TABLE_NAME, values, selection, selectionArgs);
         return updated;
     }
+
+    /**
+     * Delete a planning
+     * @param id ID's planning
+     * @return the number of rows affected
+     */
+    public static int deletePlanning(long id) {
+        String selection = DbContract.Planning._ID + " LIKE ?";
+        String[] selectionArgs = { String.valueOf(id) };
+        int deleted = db.delete(DbContract.Planning.TABLE_NAME, selection, selectionArgs);
+        return deleted;
+    }
 }

@@ -51,4 +51,14 @@
         android:onClick="updatePlanning"
         android:layout_below="@+id/pe_childspinner" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/delete"
+        android:id="@+id/pe_delete"
+        android:layout_below="@+id/pe_childspinner"
+        android:layout_toRightOf="@+id/pe_update"
+        android:layout_toEndOf="@+id/pe_update"
+        android:onClick="deletePlanning" />
+
 </RelativeLayout>
