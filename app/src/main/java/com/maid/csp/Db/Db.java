@@ -172,4 +172,21 @@ public class Db {
         int deleted = db.delete(DbContract.Planning.TABLE_NAME, selection, selectionArgs);
         return deleted;
     }
+
+    /**
+     * Update a sport
+     * @param sport ID's sport
+     * @param name name's sport
+     * @return the number of rows affected
+     */
+    public static long updateSport(long sport, String name) {
+        ContentValues values = new ContentValues();
+        values.put(DbContract.Sport.COLUMN_NAME_NAME, name);
+
+        String selection = DbContract.Sport._ID + " LIKE ?";
+        String[] selectionArgs = { String.valueOf(sport) };
+
+        int updated = db.update(DbContract.Sport.TABLE_NAME, values, selection, selectionArgs);
+        return updated;
+    }
 }

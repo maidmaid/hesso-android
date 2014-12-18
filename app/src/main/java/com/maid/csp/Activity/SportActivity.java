@@ -17,6 +17,10 @@ public class SportActivity extends ListActivity {
     @Override
     protected Intent createIntentEditor(boolean editMode) {
         Intent intent = new Intent(this, SportEditorActivity.class);
+        if(editMode) {
+            intent.putExtra("id", getListView().cursor.getId());
+            intent.putExtra("name", getListView().cursor.getSportName());
+        }
         return intent;
     }
 
