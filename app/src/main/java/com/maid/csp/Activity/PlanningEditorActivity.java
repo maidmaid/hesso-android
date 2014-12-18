@@ -5,6 +5,8 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,11 +18,12 @@ import com.maid.csp.UI.SportSpinner;
 
 import java.util.Calendar;
 
-public class PlanningEditorActivity extends Activity {
+public class PlanningEditorActivity extends EditorActivity {
     private DatePicker datePicker;
     private ChildSpinner childSpinner;
     private SportSpinner sportSpinner;
     private long planning;
+    boolean editMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,13 +34,10 @@ public class PlanningEditorActivity extends Activity {
         datePicker = (DatePicker) findViewById(R.id.pe_datepicker);
         childSpinner = (ChildSpinner) findViewById(R.id.pe_childspinner);
         sportSpinner = (SportSpinner) findViewById(R.id.pe_sportspinner);
-        Button addBtn = (Button) findViewById(R.id.pe_add);
-        Button updateBtn = (Button) findViewById(R.id.pe_update);
-        Button deleteBtn = (Button) findViewById(R.id.pe_delete);
 
         // Intent
         Intent intent = getIntent();
-        boolean editMode = intent.getBooleanExtra("edit_mode", false);
+        editMode = intent.getBooleanExtra("edit_mode", false);
         if(editMode) {
             // Get data
             planning = intent.getLongExtra("id", 0);
@@ -49,23 +49,33 @@ public class PlanningEditorActivity extends Activity {
             sportSpinner.select(idSport);
             childSpinner.select(idChild);
             datePicker.updateDate(date.get(Calendar.YEAR), date.get(Calendar.MONTH), date.get(Calendar.DAY_OF_MONTH));
-            addBtn.setVisibility(View.GONE);
-        } else {
-            updateBtn.setVisibility(View.GONE);
-            deleteBtn.setVisibility(View.GONE);
         }
     }
 
-    /**
-     * add planning
-     * @param view
-     */
-    public void addPlanning(View view) {
+    @Override
+    public void addAction() {
         Db.insertPlanning(
-                childSpinner.cursor.getId(),
-                sportSpinner.cursor.getId(),
-                getDate()
+            childSpinner.cursor.getId(),
+            sportSpinner.cursor.getId(),
+            getDate()
         );
+        finish();
+    }
+
+    @Override
+    public void updateAction() {
+        Db.updatePlanning(
+            planning,
+            childSpinner.cursor.getId(),
+            sportSpinner.cursor.getId(),
+            getDate()
+        );
+        finish();
+    }
+
+    @Override
+    public void deleteAction() {
+        Db.deletePlanning(planning);
         finish();
     }
 
@@ -80,37 +90,5 @@ public class PlanningEditorActivity extends Activity {
         Calendar c = Calendar.getInstance();
         c.set(year, month, day);
         return c;
-    }
-
-    /**
-     * Update a planning
-     * @param view
-     */
-    public void updatePlanning(View view) {
-        Db.updatePlanning(
-            planning,
-            childSpinner.cursor.getId(),
-            sportSpinner.cursor.getId(),
-            getDate()
-        );
-        finish();
-    }
-
-    /**
-     * Delete a planning
-     * @param view
-     */
-    public void deletePlanning(View view) {
-        new AlertDialog.Builder(this)
-            .setTitle(R.string.delete_planning)
-            .setMessage(R.string.delete_planning_question)
-            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    Db.deletePlanning(planning);
-                    finish();
-                }
-            })
-            .setIcon(android.R.drawable.ic_dialog_alert)
-            .show();
     }
 }

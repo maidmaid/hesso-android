@@ -3,11 +3,12 @@
 
     <string name="app_name">CSP</string>
     <string name="add_planning">Add a planning</string>
-    <string name="title_activity_planning_editor">Editor's planning</string>
+    <string name="title_activity_planning_editor">Editor planning</string>
     <string name="add">Add</string>
     <string name="update">Update</string>
     <string name="delete">Delete</string>
+    <string name="warning">Warning</string>
+    <string name="delete_question">Are you sure you want to delete this entry ?</string>
     <string name="delete_planning">Delete a planning</string>
-    <string name="delete_planning_question">Are you sure you want to delete this planning ?</string>
 
 </resources>
