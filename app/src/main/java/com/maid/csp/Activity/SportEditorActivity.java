@@ -47,6 +47,7 @@ public class SportEditorActivity extends EditorActivity {
 
     @Override
     public void deleteAction() {
-        // TODO
+        Db.deleteSport(sport);
+        finish();
     }
 }

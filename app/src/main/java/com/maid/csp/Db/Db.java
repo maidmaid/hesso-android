@@ -174,6 +174,18 @@ public class Db {
     }
 
     /**
+     * Delete plannings by sport
+     * @param id ID's sport
+     * @return the number of rows affected
+     */
+    public static int deletePlanningBySport(long id) {
+        String selection = DbContract.Planning.COLUMN_NAME_SPORT + " LIKE ?";
+        String[] selectionArgs = { String.valueOf(id) };
+        int deleted = db.delete(DbContract.Planning.TABLE_NAME, selection, selectionArgs);
+        return deleted;
+    }
+
+    /**
      * Update a sport
      * @param sport ID's sport
      * @param name name's sport
@@ -188,5 +200,22 @@ public class Db {
 
         int updated = db.update(DbContract.Sport.TABLE_NAME, values, selection, selectionArgs);
         return updated;
+    }
+
+    /**
+     * Delete a sport, with associated plannings
+     * @param id ID's sport
+     * @return the number of rows affected
+     */
+    public static int deleteSport(long id) {
+        // Delete associated plannings
+        int deleted = deletePlanningBySport(id);
+
+        // Delete sport
+        String selection = DbContract.Sport._ID + " LIKE ?";
+        String[] selectionArgs = { String.valueOf(id) };
+        deleted += db.delete(DbContract.Sport.TABLE_NAME, selection, selectionArgs);
+
+        return deleted;
     }
 }
