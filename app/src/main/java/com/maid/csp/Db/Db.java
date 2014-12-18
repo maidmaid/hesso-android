@@ -218,4 +218,21 @@ public class Db {
 
         return deleted;
     }
+
+    /**
+     * Update a child
+     * @param child ID's child
+     * @param firstname firstname's child
+     * @return the number of rows affected
+     */
+    public static long updateChild(long child, String firstname) {
+        ContentValues values = new ContentValues();
+        values.put(DbContract.Child.COLUMN_NAME_FIRSTNAME, firstname);
+
+        String selection = DbContract.Child._ID + " LIKE ?";
+        String[] selectionArgs = { String.valueOf(child) };
+
+        int updated = db.update(DbContract.Child.TABLE_NAME, values, selection, selectionArgs);
+        return updated;
+    }
 }

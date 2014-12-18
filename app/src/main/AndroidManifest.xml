@@ -48,6 +48,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maid.csp.Activity.PlanningActivity" />
         </activity>
+        <activity
+            android:name=".Activity.ChildEditorActivity"
+            android:label="@string/title_activity_child_editor"
+            android:parentActivityName=".Activity.ChildActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maid.csp.Activity.ChildActivity" />
+        </activity>
     </application>
 
 </manifest>

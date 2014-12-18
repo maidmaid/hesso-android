@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
-    tools:context="com.maid.csp.Activity.SportEditorActivity">
+    tools:context="com.maid.csp.Activity.ChildEditorActivity">
 
     <TableLayout
         android:layout_width="fill_parent"
@@ -16,20 +16,20 @@
         <TableRow
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:id="@+id/se_row_name">
+            android:id="@+id/ce_row_firstname">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="@string/name"
-                android:id="@+id/se_name_lbl"
+                android:text="@string/firstname"
+                android:id="@+id/ce_firstname_lbl"
                 android:layout_column="0" />
 
             <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:id="@+id/se_name"
+                android:id="@+id/ce_firstname"
                 android:layout_column="6"
                 android:layout_weight="1"
                 android:inputType="none" />
@@ -37,4 +37,5 @@
         </TableRow>
 
     </TableLayout>
+
 </RelativeLayout>

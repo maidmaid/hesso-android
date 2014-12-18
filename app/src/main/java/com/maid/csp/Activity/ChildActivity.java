@@ -16,7 +16,12 @@ public class ChildActivity extends ListActivity {
 
     @Override
     protected Intent createIntentEditor(boolean editMode) {
-        return null;
+        Intent intent = new Intent(this, ChildEditorActivity.class);
+        if(editMode) {
+            intent.putExtra("id", getListView().cursor.getId());
+            intent.putExtra("firstname", getListView().cursor.getChildFirstname());
+        }
+        return intent;
     }
 
     @Override
