@@ -254,7 +254,7 @@ public class Db {
      * @return the number of rows affected
      */
     public static int deleteChild(long id) {
-        // Delete associated children
+        // Delete associated child
         int deleted = deletePlanningByChild(id);
 
         // Delete child

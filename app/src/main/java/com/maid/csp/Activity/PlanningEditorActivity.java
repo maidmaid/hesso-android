@@ -74,7 +74,6 @@ public class PlanningEditorActivity extends EditorActivity {
 
     /**
      * Get date from date picker
-     * @return
      */
     public Calendar getDate() {
         int day = datePicker.getDayOfMonth();

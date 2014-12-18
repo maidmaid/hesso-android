@@ -39,6 +39,9 @@ public abstract class DbSpinner extends Spinner {
         init();
     }
 
+    /**
+     * Initialize
+     */
     protected void init() {
         SpinnerAdapter adapter;
         if(isInEditMode()) {
@@ -62,6 +65,9 @@ public abstract class DbSpinner extends Spinner {
         setOnItemSelectedListener(new OnDbItemSelectedListener());
     };
 
+    /**
+     * Db item selected listener
+     */
     protected class OnDbItemSelectedListener implements OnItemSelectedListener {
 
         @Override

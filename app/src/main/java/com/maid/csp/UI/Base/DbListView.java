@@ -31,6 +31,9 @@ public abstract class DbListView extends ListView {
         init();
     }
 
+    /**
+     * Initialize
+     */
     private void init() {
         if(isInEditMode()) {
             adapter = new ArrayAdapter<String>(

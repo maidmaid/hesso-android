@@ -8,7 +8,6 @@ import com.maid.csp.R;
 import com.maid.csp.UI.Base.DbListView;
 
 public class SportActivity extends ListActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
