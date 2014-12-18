@@ -30,7 +30,10 @@ public class PlanningActivity extends ListActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.p_open_sport:
-                openSport();
+                startSportActivity();
+                return true;
+            case R.id.p_open_child:
+                startChildActivity();
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -55,10 +58,18 @@ public class PlanningActivity extends ListActivity {
     }
 
     /**
-     * Open sport
+     * start sport activity
      */
-    private void openSport() {
+    private void startSportActivity() {
         Intent intent = new Intent(this, SportActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Start child activity
+     */
+    private void startChildActivity() {
+        Intent intent = new Intent(this, ChildActivity.class);
         startActivity(intent);
     }
 }

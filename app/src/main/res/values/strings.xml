@@ -16,5 +16,6 @@
     <string name="add_sport">Add a sport</string>
     <string name="title_activity_sport_editor">Editor sport</string>
     <string name="name">Name</string>
+    <string name="title_activity_child">Child</string>
 
 </resources>

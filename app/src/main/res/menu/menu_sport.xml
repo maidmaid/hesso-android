@@ -1,7 +1,0 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" tools:context="com.maid.csp.Activity.SportActivity">
-    <item android:id="@+id/s_add"
-        android:icon="@drawable/ic_action_new"
-        android:title="@string/add_sport"
-        android:showAsAction="always" />
-</menu>

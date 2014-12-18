@@ -40,6 +40,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maid.csp.Activity.SportActivity" />
         </activity>
+        <activity
+            android:name=".Activity.ChildActivity"
+            android:label="@string/title_activity_child"
+            android:parentActivityName=".Activity.PlanningActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.maid.csp.Activity.PlanningActivity" />
+        </activity>
     </application>
 
 </manifest>
