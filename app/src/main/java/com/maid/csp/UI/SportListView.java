@@ -6,7 +6,7 @@ import android.util.AttributeSet;
 import com.maid.csp.Db.Db;
 import com.maid.csp.Db.DbContract;
 import com.maid.csp.Db.DbCursor;
-import com.maid.csp.R;
+import com.maid.csp.UI.Base.DbListView;
 
 public class SportListView extends DbListView {
     public SportListView(Context context) {

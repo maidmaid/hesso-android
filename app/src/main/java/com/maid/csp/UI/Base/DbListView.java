@@ -1,4 +1,4 @@
-package com.maid.csp.UI;
+package com.maid.csp.UI.Base;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,10 +10,7 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 
-import com.maid.csp.Db.Db;
-import com.maid.csp.Db.DbContract;
 import com.maid.csp.Db.DbCursor;
-import com.maid.csp.R;
 
 public abstract class DbListView extends ListView {
     public DbCursor cursor;

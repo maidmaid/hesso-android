@@ -7,6 +7,7 @@ import com.maid.csp.Db.Db;
 import com.maid.csp.Db.DbContract;
 import com.maid.csp.Db.DbCursor;
 import com.maid.csp.R;
+import com.maid.csp.UI.Base.DbListView;
 
 public class PlanningListView extends DbListView {
     public PlanningListView(Context context) {

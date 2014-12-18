@@ -1,4 +1,4 @@
-package com.maid.csp.Activity;
+package com.maid.csp.Activity.Base;
 
 import android.app.Activity;
 import android.app.AlertDialog;

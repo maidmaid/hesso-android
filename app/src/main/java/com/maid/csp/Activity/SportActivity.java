@@ -3,8 +3,9 @@ package com.maid.csp.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.maid.csp.Activity.Base.ListActivity;
 import com.maid.csp.R;
-import com.maid.csp.UI.DbListView;
+import com.maid.csp.UI.Base.DbListView;
 
 public class SportActivity extends ListActivity {
 

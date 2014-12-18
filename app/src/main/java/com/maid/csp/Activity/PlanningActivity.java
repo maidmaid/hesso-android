@@ -5,9 +5,10 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.maid.csp.Activity.Base.ListActivity;
 import com.maid.csp.Db.Db;
 import com.maid.csp.R;
-import com.maid.csp.UI.DbListView;
+import com.maid.csp.UI.Base.DbListView;
 
 
 public class PlanningActivity extends ListActivity {

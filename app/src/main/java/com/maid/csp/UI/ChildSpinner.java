@@ -6,6 +6,7 @@ import android.util.AttributeSet;
 import com.maid.csp.Db.Db;
 import com.maid.csp.Db.DbContract;
 import com.maid.csp.Db.DbCursor;
+import com.maid.csp.UI.Base.DbSpinner;
 
 public class ChildSpinner extends DbSpinner {
     public ChildSpinner(Context context) {

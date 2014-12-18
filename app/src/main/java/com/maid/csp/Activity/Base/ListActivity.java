@@ -1,4 +1,4 @@
-package com.maid.csp.Activity;
+package com.maid.csp.Activity.Base;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.AdapterView;
 
 import com.maid.csp.R;
-import com.maid.csp.UI.DbListView;
+import com.maid.csp.UI.Base.DbListView;
 
 public abstract class ListActivity extends Activity {
     @Override
