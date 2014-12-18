@@ -14,12 +14,13 @@
         android:layout_alignParentLeft="true"
         android:calendarViewShown="false" />
 
-    <view
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        class="com.maid.csp.UI.ChildSpinner"
-        android:id="@+id/pe_childspinner"
-        android:layout_below="@+id/pe_datepicker"
+        android:text="@string/add"
+        android:id="@+id/pe_add"
+        android:onClick="addPlanning"
+        android:layout_below="@+id/pe_childspinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
@@ -28,18 +29,26 @@
         android:layout_height="wrap_content"
         class="com.maid.csp.UI.SportSpinner"
         android:id="@+id/pe_sportspinner"
-        android:layout_below="@+id/pe_childspinner"
+        android:layout_below="@+id/pe_datepicker"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <view
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        class="com.maid.csp.UI.ChildSpinner"
+        android:id="@+id/pe_childspinner"
+        android:layout_below="@+id/pe_sportspinner"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/add"
-        android:id="@+id/pe_add"
-        android:layout_below="@+id/pe_sportspinner"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="addPlanning" />
+        android:text="@string/update"
+        android:id="@+id/pe_update"
+        android:layout_toEndOf="@+id/pe_add"
+        android:onClick="updatePlanning"
+        android:layout_below="@+id/pe_childspinner" />
 
 </RelativeLayout>

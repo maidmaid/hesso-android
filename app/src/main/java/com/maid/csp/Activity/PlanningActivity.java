@@ -27,7 +27,6 @@ public class PlanningActivity extends Activity {
         listView.setOnItemClickListener(new OnClickListener());
     }
 
-
     /**
      * Click listener
      */
@@ -54,7 +53,6 @@ public class PlanningActivity extends Activity {
             default:
                 return super.onOptionsItemSelected(item);
         }
-
     }
 
     /**
@@ -67,12 +65,18 @@ public class PlanningActivity extends Activity {
             intent.putExtra("id", cursor.getId());
             intent.putExtra("id_child", cursor.getPlanningChild());
             intent.putExtra("id_sport", cursor.getPlanningSport());
-            intent.putExtra("date", cursor.getPlanningDate());
+            intent.putExtra("date", cursor.getPlanningDateAsCalendar());
         }
         startActivity(intent);
     }
 
     private void openPlanningEditor() {
         openPlanningEditor(false);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cursor.requery();
     }
 }

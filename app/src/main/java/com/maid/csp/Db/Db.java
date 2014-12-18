@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteQueryBuilder;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -55,12 +56,12 @@ public class Db {
      * @param date date
      * @return ID of new planning inserted
      */
-    public static long insertPlanning(long child, long sport, Date date) {
-        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static long insertPlanning(long child, long sport, Calendar date) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
         ContentValues values = new ContentValues();
         values.put(DbContract.Planning.COLUMN_NAME_CHILD, child);
         values.put(DbContract.Planning.COLUMN_NAME_SPORT, sport);
-        values.put(DbContract.Planning.COLUMN_NAME_DATE, formatter.format(date));
+        values.put(DbContract.Planning.COLUMN_NAME_DATE, formatter.format(date.getTime()));
         long id = db.insert(DbContract.Planning.TABLE_NAME, null, values);
         return id;
     }
@@ -136,5 +137,27 @@ public class Db {
         Cursor c = qb.query(db, projection, null, null, null, null, null);
 
         return new DbCursor(c);
+    }
+
+    /**
+     * Update planning
+     * @param planning ID's planning
+     * @param child ID's child
+     * @param sport ID's sport
+     * @param date date
+     * @return the number of rows affected
+     */
+    public static long updatePlanning(long planning, long child, long sport, Calendar date) {
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        ContentValues values = new ContentValues();
+        values.put(DbContract.Planning.COLUMN_NAME_CHILD, child);
+        values.put(DbContract.Planning.COLUMN_NAME_SPORT, sport);
+        values.put(DbContract.Planning.COLUMN_NAME_DATE, formatter.format(date.getTime()));
+
+        String selection = DbContract.Planning._ID + " LIKE ?";
+        String[] selectionArgs = { String.valueOf(planning) };
+
+        int updated = db.update(DbContract.Planning.TABLE_NAME, values, selection, selectionArgs);
+        return updated;
     }
 }

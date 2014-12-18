@@ -4,6 +4,10 @@ import android.database.Cursor;
 import android.database.CursorWrapper;
 import android.provider.BaseColumns;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 /**
  * Cursor with utils methods for getting data
  */
@@ -45,6 +49,33 @@ public class DbCursor extends CursorWrapper {
      */
     public String getPlanningDate() {
         return getWrappedCursor().getString(getWrappedCursor().getColumnIndex(DbContract.Planning.COLUMN_NAME_DATE));
+    }
+
+    /**
+     * Get date's planning as formatted string (yyyy-MM-dd HH:mm)
+     */
+    public String getPlanningDateAsFormattedString() {
+        String date = getPlanningDate();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+        String formatted = formatter.format(date);
+        return formatted;
+    }
+
+    /**
+     * Get date's planning as Calendar object
+     */
+    public Calendar getPlanningDateAsCalendar() {
+        String date = getPlanningDate();
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+
+        Calendar calendar = Calendar.getInstance();
+        try {
+            calendar.setTime(formatter.parse(date));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return calendar;
     }
 
     /**
