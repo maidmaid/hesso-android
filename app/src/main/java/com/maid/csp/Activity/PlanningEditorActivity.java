@@ -16,7 +16,6 @@ public class PlanningEditorActivity extends EditorActivity {
     private ChildSpinner childSpinner;
     private SportSpinner sportSpinner;
     private long planning;
-    boolean editMode;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
