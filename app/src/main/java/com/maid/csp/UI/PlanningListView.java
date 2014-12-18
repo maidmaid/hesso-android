@@ -3,7 +3,9 @@ package com.maid.csp.UI;
 import android.content.Context;
 import android.util.AttributeSet;
 
+import com.maid.csp.Db.Db;
 import com.maid.csp.Db.DbContract;
+import com.maid.csp.Db.DbCursor;
 import com.maid.csp.R;
 
 public class PlanningListView extends DbListView {
@@ -17,6 +19,11 @@ public class PlanningListView extends DbListView {
 
     public PlanningListView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
+    }
+
+    @Override
+    public DbCursor initializeCursor() {
+        return Db.getPlanningsWithSportAndChildren();
     }
 
     @Override

@@ -42,7 +42,7 @@ public abstract class DbListView extends ListView {
                 new String[] { getClass().getSimpleName() + " (DbListView)"  }
             );
         } else {
-            cursor = Db.getPlanningsWithSportAndChildren();
+            cursor = initializeCursor();
             adapter = new SimpleCursorAdapter(
                     getContext(),
                 getLayout(),
@@ -55,8 +55,24 @@ public abstract class DbListView extends ListView {
         setAdapter(adapter);
     }
 
+    /**
+     * Initialize cursor
+     */
+    public abstract DbCursor initializeCursor();
+
+    /**
+     * Get layout
+     */
     public abstract int getLayout();
+
+    /**
+     * Get views
+     */
     public abstract int[] getViews();
+
+    /**
+     * Get columns
+     */
     public abstract String[] getColumns();
 
     /**
