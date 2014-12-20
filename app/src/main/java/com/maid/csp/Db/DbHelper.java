@@ -26,6 +26,7 @@ public class DbHelper extends SQLiteOpenHelper {
         db.execSQL(DbContract.Planning.SQL_CREATE_TABLE);
 
         // Load data
+        Db.initialize(db);
         long child = Db.insertChild("Dany");
         long sport = Db.insertSport("Football");
         Calendar date = Calendar.getInstance();

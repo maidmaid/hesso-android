@@ -26,6 +26,14 @@ public class Db {
     }
 
     /**
+     * Initialize database
+     * @param db database
+     */
+    public static void initialize(SQLiteDatabase db) {
+        Db.db = db;
+    }
+
+    /**
      * Insert a child record
      * @param firstname firstname
      * @return ID of new children inserted
