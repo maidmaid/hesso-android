@@ -35,6 +35,9 @@ public class PlanningActivity extends ListActivity {
             case R.id.p_open_child:
                 startChildActivity();
                 return true;
+            case R.id.p_open_settings:
+                startSettingsActivity();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -70,6 +73,14 @@ public class PlanningActivity extends ListActivity {
      */
     private void startChildActivity() {
         Intent intent = new Intent(this, ChildActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * Start child activity
+     */
+    private void startSettingsActivity() {
+        Intent intent = new Intent(getApplicationContext(), SettingsActivity.class);
         startActivity(intent);
     }
 }

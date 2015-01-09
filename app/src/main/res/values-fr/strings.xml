@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CSP</string>
+    <string name="add_planning">Ajouter un planning</string>
+    <string name="title_activity_planning_editor">Editeur planning</string>
+    <string name="add">Ajoute</string>
+    <string name="update">Mettre à jour</string>
+    <string name="delete">Supprimer</string>
+    <string name="warning">Attention</string>
+    <string name="delete_question">Êtes-vous sûr de vouloir supprimer cette entré ?</string>
+    <string name="delete_planning">Supprimer un planning</string>
+    <string name="title_activity_sport">Sports</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="add_sport">Ajouter un sport</string>
+    <string name="title_activity_sport_editor">Editeur sport</string>
+    <string name="name">Nom</string>
+    <string name="title_activity_child">Enfant</string>
+    <string name="title_activity_child_editor">Editeur enfant</string>
+    <string name="firstname">Nom</string>
+    <string name="date">Date</string>
+    <string name="sport">Sport</string>
+    <string name="child">Enfant</string>
+    <string name="title_activity_setting">Paramètres</string>
+    <string-array name="languages">
+        <item>fr</item>
+        <item>en</item>
+    </string-array>
+    <string name="language">Langue</string>
+</resources>

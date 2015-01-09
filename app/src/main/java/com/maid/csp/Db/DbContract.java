@@ -6,7 +6,7 @@ import android.provider.BaseColumns;
  * Contract of database
  */
 public class DbContract {
-    public static final int DATABASE_VERSION = 4;
+    public static final int DATABASE_VERSION = 6;
     public static final String DATABASE_NAME = "database.sqlite";
     private static final String TEXT_TYPE = " TEXT";
     private static final String INTEGER_TYPE = " INTEGER";

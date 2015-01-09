@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">CSP</string>
     <string name="add_planning">Add a planning</string>
     <string name="title_activity_planning_editor">Editor planning</string>
@@ -22,5 +21,10 @@
     <string name="date">Date</string>
     <string name="sport">Sport</string>
     <string name="child">Child</string>
-
+    <string name="title_activity_setting">SettingActivity</string>
+    <string-array name="languages">
+        <item>fr</item>
+        <item>en</item>
+    </string-array>
+    <string name="language">Language</string>
 </resources>

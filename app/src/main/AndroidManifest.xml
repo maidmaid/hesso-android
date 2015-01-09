@@ -56,6 +56,11 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.maid.csp.Activity.ChildActivity" />
         </activity>
+        <activity
+            android:name=".Activity.SettingsActivity"
+            android:label="@string/title_activity_setting"
+            android:parentActivityName=".Activity.PlanningActivity" >
+        </activity>
     </application>
 
 </manifest>

@@ -8,4 +8,6 @@
         android:icon="@drawable/ic_action_sport"
         android:title="@string/add_planning"
         android:showAsAction="always" />
+    <item android:id="@+id/p_open_settings" android:title="@string/action_settings"
+        android:orderInCategory="100" android:showAsAction="never" />
 </menu>
